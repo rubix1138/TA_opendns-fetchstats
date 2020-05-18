@@ -1,0 +1,12 @@
+[passwords/credential%3A%3Axavier%40ashe.com%3A]
+owner = admin
+version = 8.0.3
+modtime = 1589768140.023818000
+
+[app/install/is_configured]
+version = 8.0.3
+modtime = 1589768140.028016000
+
+[inputs/script%3A%2F%2F.%2Fbin%2Ffetchstats.py]
+version = 8.0.3
+modtime = 1589827319.683991000
