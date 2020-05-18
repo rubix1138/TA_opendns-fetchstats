@@ -41,7 +41,10 @@ def main():
         
         # current not supporting multiple accounts.  change the next line if you need to get a specific network
         networkid="all"
-        dateFrom=datetime.date.today()
+        
+        # Always pull yesterday's information
+        dateFrom=datetime.date.today() - datetime.timedelta(days = 1)
+        timestamp=time.time() - 86400
         
         # create a session object to store cookies
         s = requests.Session()
@@ -90,8 +93,11 @@ def main():
             csv = None
             r = None
 
+        sys.stderr.write("Data retreival complete\n")
+        # send events to Splunk with timestamp
         for line in csvOut.splitlines():
-            print(str(time.time()) + "," +line)
+            print(str(timestamp) + "," +line)
+        sys.stderr.write("Execution complete\n")
 
 if __name__ == "__main__":
     main()
